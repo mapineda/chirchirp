@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>Chirp</title>
+		<script type="text/javascript" src='http://ajax.googleapis.com/ajax/angularjs/1.2.0/angular.min.js'></script>
+		<script type="text/javascript" src='javascripts/chirpApp.js'></script>
+	</head>
+
+	<body ng-app='chirpApp'>
+		<div id='main' ng-controller='mainController'>
+			<form ng-Submit='post()'>
+				<input type='text' placeholder='Your name' ng-model='newPost.created_by'/>
+				<textarea required maxlength='200' rows='3' placeholder='Say something'></textarea>
+				<input class='button' type='submit' value='Chirp!'/>
+			</form>
+			<div id='post-stream'>
+				<h4>Chirp Feed</h4>
+				<div class='post' ng-repeat="post in post | orderBy:'created_at' :true">
+					
+				</div>
+				<!-- TO BE POPULATED BY ANGULAR -->
+			</div>
+		</div>
+		
+	</body>
+</html>
