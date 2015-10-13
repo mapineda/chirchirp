@@ -16,8 +16,8 @@
 			</form>
 			<div id='post-stream'>
 				<h4>Chirp Feed</h4>
-				<div class='post' ng-repeat="post in post | orderBy:'created_at' :true">
-					
+				<div class='post' ng-repeat="post in post | orderBy:'created_at' :true" ng-class-odd="'odd'" ng-class-even="'even'">
+				<p>{{post.created_by}} says {{post.text}} at {{post.created_at}}</p>
 				</div>
 				<!-- TO BE POPULATED BY ANGULAR -->
 			</div>
